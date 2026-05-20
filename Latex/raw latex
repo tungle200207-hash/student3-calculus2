@@ -1,1 +1,558 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\vspace{0.4cm}
+\begin{document}
+%------------------------------------------------
+% Header section
+\noindent
+\begin{minipage}{0.1\textwidth}
+    \includegraphics[width=\textwidth]{bk_logo.png} % Replace with actual logo filename
+\end{minipage}
+\begin{minipage}{0.85\textwidth}
+    \flushleft
+    \textbf{Ho Chi Minh University of Technology} \\
+    Department of Electronic Engineering
+\end{minipage}
 
+\vspace{0.1cm}
+\hrule
+\vspace{0.8cm}
+\section*{Question 1: Muscle Force Density in a 3D Region}
+
+\begin{frame}{Problem Statement and Context}
+
+\textbf{Context:}
+
+A biomechanics researcher analyzes a 3D musculoskeletal region where the muscle force density is given by:
+
+\[
+g(x,y,z)=541.64x^6y^8z^7
+\]
+
+over the region bounded by:
+
+\[
+0\le x\le 6,
+\qquad
+0\le y\le 3,
+\qquad
+0\le z\le 5
+\]
+
+The objective is to compute the \textbf{total muscle force distributed} in the region using a triple integral.
+
+\vspace{0.4cm}
+
+The total force is
+\[
+\iiint_R g(x,y,z) \, dV = 541.64 \int_{0}^{6} x^{6} \, dx \int_{0}^{3} y^{8} \, dy \int_{0}^{5} z^{7} \, dz
+\]
+
+\subsection*{Compute each integral:}
+\[
+\int_{0}^{6} x^{6} \, dx = \left[ \frac{x^{7}}{7} \right]_{0}^{6} = \frac{6^{7}}{7} = \frac{279936}{7}
+\]
+\[
+\int_{0}^{3} y^{8} \, dy = \left[ \frac{y^{9}}{9} \right]_{0}^{3} = \frac{3^{9}}{9} = \frac{19683}{9} = 2187
+\]
+\[
+\int_{0}^{5} z^{7} \, dz = \left[ \frac{z^{8}}{8} \right]_{0}^{5} = \frac{5^{8}}{8} = \frac{390625}{8}
+\]
+
+\subsection*{Final result (rounded to 4 decimal places):}
+\[
+\boxed{2313077972464286.0000}
+\]
+
+
+\end{frame}
+\newpage
+% Header section
+\noindent
+\begin{minipage}{0.1\textwidth}
+    \includegraphics[width=\textwidth]{bk_logo.png} % Replace with actual logo filename
+\end{minipage}
+\begin{minipage}{0.85\textwidth}
+    \flushleft
+    \textbf{Ho Chi Minh University of Technology} \\
+    Department of Electronic Engineering
+\end{minipage}
+
+\vspace{0.1cm}
+\hrule
+\vspace{0.8cm}
+\subsection*{Matlab Code}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{matlab code/question 1.1.3.png}
+    \caption{Matlab code question 1}
+    \label{fig:placeholder}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{matlab figure/question 1.png}
+    \caption{Result for question 1}
+    \label{fig:placeholder}
+\end{figure}
+\newpage
+% Header section
+\noindent
+\begin{minipage}{0.1\textwidth}
+    \includegraphics[width=\textwidth]{bk_logo.png} % Replace with actual logo filename
+\end{minipage}
+\begin{minipage}{0.85\textwidth}
+    \flushleft
+    \textbf{Ho Chi Minh University of Technology} \\
+    Department of Electronic Engineering
+\end{minipage}
+
+\vspace{0.1cm}
+\hrule
+\vspace{0.8cm}
+\section*{Question 2:Force Distribution in a Spherical Joint}
+
+\begin{frame}{Problem Statement and Context}
+
+\textbf{Context:}
+
+A biomechanics team models a spherical joint system with radius \(6.5\) units, where the joint force density at a point \((x,y,z)\) is given by:
+
+\[
+I(x,y,z)=489.06x^2+489.06y^2+489.06z^2
+\]
+
+The objective is to compute the \textbf{total joint force} in the spherical system using spherical coordinates.
+
+\vspace{0.4cm}
+
+The joint force density is
+\[ I(x,y,z) = 489.06 (x^{2} + y^{2} + z^{2}) \]
+inside the sphere of radius $R = 6.5$.
+
+In spherical coordinates: $x = \rho \sin\phi \cos\theta$, $y = \rho \sin\phi \sin\theta$, $z = \rho \cos\phi$, and $dV = \rho^{2} \sin\phi \, d\rho \, d\phi \, d\theta$.
+
+\[
+\iiint I \, dV = 489.06 \int_{0}^{2\pi} d\theta \int_{0}^{\pi} \sin\phi \, d\phi \int_{0}^{6.5} \rho^{4} \, d\rho
+\]
+
+\[
+\int_{0}^{2\pi} d\theta = 2\pi, \quad \int_{0}^{\pi} \sin\phi \, d\phi = 2, \quad \int_{0}^{6.5} \rho^{4} \, d\rho = \frac{(6.5)^{5}}{5}
+\]
+
+\subsection*{Final result (rounded to 4 decimal places):}
+\[
+\boxed{14261617.5668}
+\]
+\end{frame}
+\newpage
+% Header section
+\noindent
+\begin{minipage}{0.1\textwidth}
+    \includegraphics[width=\textwidth]{bk_logo.png} % Replace with actual logo filename
+\end{minipage}
+\begin{minipage}{0.85\textwidth}
+    \flushleft
+    \textbf{Ho Chi Minh University of Technology} \\
+    Department of Electronic Engineering
+\end{minipage}
+
+\vspace{0.1cm}
+\hrule
+\vspace{0.8cm}
+\subsection*{Matlab Code}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{matlab code/question 1.2.3.png}
+    \caption{Matlab code question 2}
+    \label{fig:placeholder}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{matlab figure/question 2.png}
+    \caption{Result for question 2}
+    \label{fig:placeholder}
+\end{figure}
+\newpage
+% Header section
+\noindent
+\begin{minipage}{0.1\textwidth}
+    \includegraphics[width=\textwidth]{bk_logo.png} % Replace with actual logo filename
+\end{minipage}
+\begin{minipage}{0.85\textwidth}
+    \flushleft
+    \textbf{Ho Chi Minh University of Technology} \\
+    Department of Electronic Engineering
+\end{minipage}
+
+\vspace{0.1cm}
+\hrule
+\vspace{0.8cm}
+\section*{Question 3: Tendon Stress in a Cylindrical Segment}
+
+\begin{frame}{Problem Statement and Context}
+
+\textbf{Context:}
+
+A cylindrical limb segment in a musculoskeletal model has a radius of \(3.5\) units and a height of \(8.5\) units. The tendon stress density at a point \((x,y,z)\) within the segment is defined by:
+
+\[
+P(x,y,z)=243.51x^2+243.51y^2
+\]
+
+The objective is to compute the \textbf{total tendon stress} in the cylindrical segment using cylindrical coordinates.
+
+\vspace{0.4cm}
+
+In cylindrical coordinates: $x = r\cos\theta$, $y = r\sin\theta$, $dV = r \, dr \, d\theta \, dz$.
+
+\[
+\iiint P \, dV = 243.51 \int_{0}^{8.5} dz \int_{0}^{2\pi} d\theta \int_{0}^{3.5} (r^{2}) \cdot r \, dr = 243.51 \cdot h \cdot 2\pi \int_{0}^{3.5} r^{3} \, dr
+\]
+
+\[
+\int_{0}^{3.5} r^{3} \, dr = \frac{(3.5)^{4}}{4}
+\]
+
+Final result (rounded to 4 decimal places):
+\[
+\boxed{487896.5878}
+\]
+\end{frame}
+\newpage
+% Header section
+\noindent
+\begin{minipage}{0.1\textwidth}
+    \includegraphics[width=\textwidth]{bk_logo.png} % Replace with actual logo filename
+\end{minipage}
+\begin{minipage}{0.85\textwidth}
+    \flushleft
+    \textbf{Ho Chi Minh University of Technology} \\
+    Department of Electronic Engineering
+\end{minipage}
+
+\vspace{0.1cm}
+\hrule
+\vspace{0.8cm}
+\subsection*{Matlab Code}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{matlab code/question 1.3.3.png}
+    \caption{Matlab code question 3}
+    \label{fig:placeholder}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{matlab figure/question 3.png}
+    \caption{Result for question 3}
+    \label{fig:placeholder}
+\end{figure}
+\newpage
+% Header section
+\noindent
+\begin{minipage}{0.1\textwidth}
+    \includegraphics[width=\textwidth]{bk_logo.png} % Replace with actual logo filename
+\end{minipage}
+\begin{minipage}{0.85\textwidth}
+    \flushleft
+    \textbf{Ho Chi Minh University of Technology} \\
+    Department of Electronic Engineering
+\end{minipage}
+
+\vspace{0.1cm}
+\hrule
+\vspace{0.8cm}
+\section*{Question 4 — Jacobian Transformation}
+
+\begin{frame}{Problem Statement and Context}
+
+\textbf{Context:}
+
+In a multivariable musculoskeletal model, the force output density function for a limb system is:
+
+\[
+P(x,y,z)=791.06xyz
+\]
+
+where \(x,y,z\) represent normalized inputs for muscle contraction, joint pressure, and bone displacement.
+
+The transformation to new coordinates is defined by:
+
+\[
+x=\frac{u+3v+w}{4}
+\]
+
+\[
+y=\frac{u-v+w}{4}
+\]
+
+\[
+z=\frac{u-v-3w}{4}
+\]
+
+The region is bounded by:
+
+\[
+0\le u\le 4,
+\qquad
+-1\le v\le 3,
+\qquad
+-1\le w\le 6
+\]
+
+The objective is to compute the total musculoskeletal force output using the Jacobian transform.
+
+\end{frame}
+
+%------------------------------------------------
+Given:
+\[ P(x,y,z) = 791.06 \, xyz \]
+with transformation:
+\[
+x = \frac{u + 3v + w}{4}, \quad y = \frac{u - v + w}{4}, \quad z = \frac{u - v - 3w}{4}
+\]
+over $0 \leq u \leq 4$, $-1 \leq v \leq 3$, $-1 \leq w \leq 6$.
+
+The Jacobian determinant is $\left| \frac{\partial(x,y,z)}{\partial(u,v,w)} \right| = \frac{1}{4}$.
+
+The integral becomes:
+\[
+\iiint_D 791.06 \cdot xyz \cdot \frac{1}{4} \, du \, dv \, dw
+\]
+
+After substitution and evaluation:
+\[
+\boxed{-105182.1393}
+\]
+\newpage
+% Header section
+\noindent
+\begin{minipage}{0.1\textwidth}
+    \includegraphics[width=\textwidth]{bk_logo.png} % Replace with actual logo filename
+\end{minipage}
+\begin{minipage}{0.85\textwidth}
+    \flushleft
+    \textbf{Ho Chi Minh University of Technology} \\
+    Department of Electronic Engineering
+\end{minipage}
+
+\vspace{0.1cm}
+\hrule
+\vspace{0.8cm}
+\subsection*{Matlab Code}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{matlab code/question 1.4.3.png}
+    \caption{Matlab code question 4}
+    \label{fig:placeholder}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{matlab figure/question 4.png}
+    \caption{Reusult for question 4}
+    \label{fig:placeholder}
+\end{figure}
+\newpage
+
+% Header section
+\noindent
+\begin{minipage}{0.1\textwidth}
+    \includegraphics[width=\textwidth]{bk_logo.png} % Replace with actual logo filename
+\end{minipage}
+\begin{minipage}{0.85\textwidth}
+    \flushleft
+    \textbf{Ho Chi Minh University of Technology} \\
+    Department of Electronic Engineering
+\end{minipage}
+
+\vspace{0.1cm}
+\hrule
+\vspace{0.8cm}
+\section*{Question 5 — Force Cost in a Tetrahedral Region}
+
+\begin{frame}{Problem Statement and Context}
+
+\textbf{Context:}
+
+The following triple integral represents the force cost function in a bounded musculoskeletal system with quadratic variation along the vertical axis:
+
+\[\iiint_E (258.70x+369.81y+z^2)\,dV\]
+
+The solid tetrahedral region \(E\) is bounded by:
+\[x=0.1,
+\qquad
+y=0.4,
+\qquad
+z=0.3,
+\qquad
+x+y+z=4
+\]
+
+The objective is to evaluate the \textbf{total force cost} within the system.
+
+\vspace{0.4cm}
+
+Shift the variables:
+
+\[
+u=x-0.1,
+\qquad
+v=y-0.4,
+\qquad
+w=z-0.3
+\]
+
+Then:
+
+\[
+u,v,w\ge0
+\]
+
+and the plane becomes:
+
+\[
+u+v+w=3.2
+\]
+
+\end{frame}
+
+%------------------------------------------------
+\subsection{Evaluating the Triple Integral}
+
+\begin{frame}{Evaluating the Triple Integral}
+
+Substitute:
+
+\[
+x=u+0.1,
+\qquad
+y=v+0.4,
+\qquad
+z=w+0.3
+\]
+
+into the integrand:
+
+\[
+258.70(u+0.1)+369.81(v+0.4)+(w+0.3)^2
+\]
+
+Expanding:
+
+\[
+258.70u+369.81v+w^2+0.6w+173.784
+\]
+
+The tetrahedral region becomes:
+
+\[
+u+v+w\le3.2
+\]
+\newpage
+% Header section
+\noindent
+\begin{minipage}{0.1\textwidth}
+    \includegraphics[width=\textwidth]{bk_logo.png} % Replace with actual logo filename
+\end{minipage}
+\begin{minipage}{0.85\textwidth}
+    \flushleft
+    \textbf{Ho Chi Minh University of Technology} \\
+    Department of Electronic Engineering
+\end{minipage}
+
+\vspace{0.1cm}
+\hrule
+\vspace{0.8cm}
+Using tetrahedral integral formulas:
+
+\[
+\iiint_E u\,dV
+=
+\iiint_E v\,dV
+=
+\frac{3.2^4}{24}
+=
+4.3690667
+\]
+
+\[
+\iiint_E w^2\,dV
+=
+\frac{3.2^5}{60}
+=
+5.5924053
+\]
+
+\[
+V=\frac{3.2^3}{6}=5.4613333
+\]
+
+\end{frame}
+
+%------------------------------------------------
+\subsection*{Final Answer}
+
+\begin{frame}{Final Answer}
+
+Substitute all evaluated values:
+
+\[
+F=
+258.70(4.3690667)
++
+369.81(4.3690667)
++
+5.5924053
++
+0.6(4.3690667)
++
+173.784(5.4613333)
+\]
+
+Final result:
+
+\[
+F=3710.9470
+\]
+
+\vspace{0.4cm}
+
+Therefore, the total force cost within the tetrahedral musculoskeletal system is:
+
+\[
+\boxed{
+3710.9470
+}
+\]
+
+\end{frame}
+\newpage
+% Header section
+\noindent
+\begin{minipage}{0.1\textwidth}
+    \includegraphics[width=\textwidth]{bk_logo.png} % Replace with actual logo filename
+\end{minipage}
+\begin{minipage}{0.85\textwidth}
+    \flushleft
+    \textbf{Ho Chi Minh University of Technology} \\
+    Department of Electronic Engineering
+\end{minipage}
+
+\vspace{0.1cm}
+\hrule
+\vspace{0.8cm}
+\subsection*{Matlab Code}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{matlab code/question 1.5.3.png}
+    \caption{Matlab code question 5}
+    \label{fig:placeholder}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{matlab figure/question 5.png}
+    \caption{Result for question 5}
+    \label{fig:placeholder}
+\end{figure}
+
+\end{document}
