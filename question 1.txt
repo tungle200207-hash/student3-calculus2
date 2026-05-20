@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsmath}
+\vspace{0.4cm}
+\begin{document}
+%------------------------------------------------
+\section{Question 1: Muscle Force Density in a 3D Region}
+
+\begin{frame}{Problem Statement and Context}
+
+\textbf{Context:}
+
+A biomechanics researcher analyzes a 3D musculoskeletal region where the muscle force density is given by:
+
+\[
+g(x,y,z)=541.64x^6y^8z^7
+\]
+
+over the region bounded by:
+
+\[
+0\le x\le 6,
+\qquad
+0\le y\le 3,
+\qquad
+0\le z\le 5
+\]
+
+The objective is to compute the \textbf{total muscle force distributed} in the region using a triple integral.
+
+\vspace{0.4cm}
+
+The total force is
+\[
+\iiint_R g(x,y,z) \, dV = 541.64 \int_{0}^{6} x^{6} \, dx \int_{0}^{3} y^{8} \, dy \int_{0}^{5} z^{7} \, dz
+\]
+
+Compute each integral:
+\[
+\int_{0}^{6} x^{6} \, dx = \left[ \frac{x^{7}}{7} \right]_{0}^{6} = \frac{6^{7}}{7} = \frac{279936}{7}
+\]
+\[
+\int_{0}^{3} y^{8} \, dy = \left[ \frac{y^{9}}{9} \right]_{0}^{3} = \frac{3^{9}}{9} = \frac{19683}{9} = 2187
+\]
+\[
+\int_{0}^{5} z^{7} \, dz = \left[ \frac{z^{8}}{8} \right]_{0}^{5} = \frac{5^{8}}{8} = \frac{390625}{8}
+\]
+
+Final result (rounded to 4 decimal places):
+\[
+\boxed{2313077972464286.0000}
+\]
+
+
+\end{frame}
+
+%------------------------------------------------
+\end{document}

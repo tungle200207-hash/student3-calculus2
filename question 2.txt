@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{amsmath}
+\vspace{0.4cm}
+\begin{document}
+%------------------------------------------------
+\section{Force Distribution in a Spherical Joint}
+
+\begin{frame}{Problem Statement and Context}
+
+\textbf{Context:}
+
+A biomechanics team models a spherical joint system with radius \(6.5\) units, where the joint force density at a point \((x,y,z)\) is given by:
+
+\[
+I(x,y,z)=489.06x^2+489.06y^2+489.06z^2
+\]
+
+The objective is to compute the \textbf{total joint force} in the spherical system using spherical coordinates.
+
+\vspace{0.4cm}
+
+The joint force density is
+\[ I(x,y,z) = 489.06 (x^{2} + y^{2} + z^{2}) \]
+inside the sphere of radius $R = 6.5$.
+
+In spherical coordinates: $x = \rho \sin\phi \cos\theta$, $y = \rho \sin\phi \sin\theta$, $z = \rho \cos\phi$, and $dV = \rho^{2} \sin\phi \, d\rho \, d\phi \, d\theta$.
+
+\[
+\iiint I \, dV = 489.06 \int_{0}^{2\pi} d\theta \int_{0}^{\pi} \sin\phi \, d\phi \int_{0}^{6.5} \rho^{4} \, d\rho
+\]
+
+\[
+\int_{0}^{2\pi} d\theta = 2\pi, \quad \int_{0}^{\pi} \sin\phi \, d\phi = 2, \quad \int_{0}^{6.5} \rho^{4} \, d\rho = \frac{(6.5)^{5}}{5}
+\]
+
+Final result (rounded to 4 decimal places):
+\[
+\boxed{14261617.5668}
+\]
+\end{frame}
+%------------------------------------------------
+\end{document}

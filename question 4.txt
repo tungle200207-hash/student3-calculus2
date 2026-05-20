@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{amsmath}
+\vspace{0.4cm}
+\begin{document}
+%------------------------------------------------
+\section{Question 4 — Jacobian Transformation}
+
+\begin{frame}{Problem Statement and Context}
+
+\textbf{Context:}
+
+In a multivariable musculoskeletal model, the force output density function for a limb system is:
+
+\[
+P(x,y,z)=791.06xyz
+\]
+
+where \(x,y,z\) represent normalized inputs for muscle contraction, joint pressure, and bone displacement.
+
+The transformation to new coordinates is defined by:
+
+\[
+x=\frac{u+3v+w}{4}
+\]
+
+\[
+y=\frac{u-v+w}{4}
+\]
+
+\[
+z=\frac{u-v-3w}{4}
+\]
+
+The region is bounded by:
+
+\[
+0\le u\le 4,
+\qquad
+-1\le v\le 3,
+\qquad
+-1\le w\le 6
+\]
+
+The objective is to compute the total musculoskeletal force output using the Jacobian transform.
+
+\end{frame}
+
+%------------------------------------------------
+Given:
+\[ P(x,y,z) = 791.06 \, xyz \]
+with transformation:
+\[
+x = \frac{u + 3v + w}{4}, \quad y = \frac{u - v + w}{4}, \quad z = \frac{u - v - 3w}{4}
+\]
+over $0 \leq u \leq 4$, $-1 \leq v \leq 3$, $-1 \leq w \leq 6$.
+
+The Jacobian determinant is $\left| \frac{\partial(x,y,z)}{\partial(u,v,w)} \right| = \frac{1}{4}$.
+
+The integral becomes:
+\[
+\iiint_D 791.06 \cdot xyz \cdot \frac{1}{4} \, du \, dv \, dw
+\]
+
+After substitution and evaluation:
+\[
+\boxed{-105182.1393}
+\]
+\end{document}

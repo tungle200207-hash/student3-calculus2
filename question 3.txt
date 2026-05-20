@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{amsmath}
+\vspace{0.4cm}
+\begin{document}
+%------------------------------------------------
+\section{Tendon Stress in a Cylindrical Segment}
+
+\begin{frame}{Problem Statement and Context}
+
+\textbf{Context:}
+
+A cylindrical limb segment in a musculoskeletal model has a radius of \(3.5\) units and a height of \(8.5\) units. The tendon stress density at a point \((x,y,z)\) within the segment is defined by:
+
+\[
+P(x,y,z)=243.51x^2+243.51y^2
+\]
+
+The objective is to compute the \textbf{total tendon stress} in the cylindrical segment using cylindrical coordinates.
+
+\vspace{0.4cm}
+
+In cylindrical coordinates: $x = r\cos\theta$, $y = r\sin\theta$, $dV = r \, dr \, d\theta \, dz$.
+
+\[
+\iiint P \, dV = 243.51 \int_{0}^{8.5} dz \int_{0}^{2\pi} d\theta \int_{0}^{3.5} (r^{2}) \cdot r \, dr = 243.51 \cdot h \cdot 2\pi \int_{0}^{3.5} r^{3} \, dr
+\]
+
+\[
+\int_{0}^{3.5} r^{3} \, dr = \frac{(3.5)^{4}}{4}
+\]
+
+Final result (rounded to 4 decimal places):
+\[
+\boxed{487896.5878}
+\]
+\end{frame}
+%------------------------------------------------
+\end{document}
